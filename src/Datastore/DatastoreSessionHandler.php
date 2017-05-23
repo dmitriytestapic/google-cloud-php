@@ -218,6 +218,9 @@ class DatastoreSessionHandler implements SessionHandlerInterface
                 [
                     'data' => $data,
                     't' => time()
+                ],
+                [
+                    'excludeFromIndexes' => ['data']
                 ]
             );
             $this->transaction->upsert($entity);
